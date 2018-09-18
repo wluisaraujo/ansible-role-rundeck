@@ -1,2 +1,14 @@
 ---
 # handlers file for iac-ansible-rundeck
+- name: Start rundeckd
+  when: (ansible_os_family == "RedHat")
+  service: name=rundeckd state=started 
+                
+- name: Stop rundeckd
+  when: (ansible_os_family == "RedHat")
+  service: name=rundeckd state=stoped
+                
+- name: Restart rundeckd
+  when: (ansible_os_family == "RedHat")
+  service: name=rundeckd.service state=restarted  
+...

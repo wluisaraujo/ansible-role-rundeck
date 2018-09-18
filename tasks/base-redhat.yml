@@ -1,13 +1,25 @@
 ---
-# tasks file for iac-ansible-rundeck
-- name: Instalando dependencias
-  yum: name=java
+##
+## tasks file for iac-ansible-rundeck
+
+- name: Instalando Dependencias
+  yum: 
+    name: java 
+    state: present
+  register: "dep_installed"
 
 - name: Configurando repositorio
   yum:
     name: http://repo.rundeck.org/latest.rpm
     state: present
+  register: "repo_installed"
+  when: ( dep_installed is success )
 
 - name: Instalando Rundeck
-  yum: name=rundeck state=latest
+  yum: 
+    name: rundeck 
+    state: latest
+  when: ( repo_installed is success )
+  notify: 
+    - Start rundeckd
 ...
