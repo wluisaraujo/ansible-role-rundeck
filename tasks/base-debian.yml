@@ -25,13 +25,10 @@
   register: REPOKEY
   when: ( REPOSITORIO is success )  
     
-#
-#- name: 'Baixando .DEB Rundeck'
-#  get_url: 
-#    url: http://dl.bintray.com/rundeck/rundeck-deb/:rundeck_3.0.9.20181127-1.201811291844_all.deb
-#    dest: /tmp/rundeck_2.10.8-1-GA_all.deb
-
-#- name: Instalando pacote .DEB
-#  apt: 
-#    deb: /tmp/rundeck_2.10.8-1-GA_all.deb
+- name: 'Instalando Rundeck'
+  apt:
+    name: rundeck
+    state: present
+    update_cache: true
+  when: ( REPOKEY is success )
 ...
