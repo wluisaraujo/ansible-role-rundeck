@@ -8,6 +8,18 @@
     state: present
   with_items: 
     - 'openjdk-8-jdk'
+
+- name: 'adicionando repositorio'
+  apt_repository:
+    repo: 'deb https://rundeck.bintray.com/rundeck-deb /'
+    state: present
+    validate_certs: no
+
+- apt_key:
+    url: 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray'
+    state: present
+    validate_certs: no
+    
 #
 #- name: 'Baixando .DEB Rundeck'
 #  get_url: 
