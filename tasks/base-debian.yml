@@ -25,10 +25,10 @@
   register: REPOKEY
   when: ( REPOSITORIO is success )  
     
-- name: 'Instalando Rundeck'
-  apt:
-    name: 'rundeck'
-    state: present
-    update_cache: true
-  when: ( REPOKEY is success )
+#- name: 'Instalando Rundeck'
+#  apt:
+#    name: 'rundeck'
+#    state: present
+#    update_cache: true
+#  when: ( REPOKEY is success )
 ...
