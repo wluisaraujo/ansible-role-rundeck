@@ -1,9 +1,12 @@
 ---
 # tasks file for iac-ansible-rundeck
-- name: Instalar Dependencias
-  apt: name={{ item }} update_cache=yes state=present
+- name: 'Instalar Dependencias'
+  apt: 
+    name: '{{ item }}'
+    update_cache: yes 
+    state: present
   with_items: 
-    - openjdk-8-jdk
+    - 'openjdk-8-jdk'
 
 - name: Baixando .DEB Rundeck
   get_url: 
