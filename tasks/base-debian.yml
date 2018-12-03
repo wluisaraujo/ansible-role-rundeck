@@ -27,7 +27,7 @@
     
 - name: 'Instalando Rundeck'
   apt:
-    name: rundeck
+    name: 'rundeck'
     state: present
     update_cache: true
   when: ( REPOKEY is success )
