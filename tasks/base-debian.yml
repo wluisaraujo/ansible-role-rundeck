@@ -3,11 +3,11 @@
 
 - name: 'Instalar Dependencias'
   apt: 
-    name: openjdk-8-jdk
+    name: '{{ item }}'
     update_cache: yes 
     state: present
-  #with_items: 
-  #  - 'openjdk-8-jdk'
+  with_items: 
+    - openjdk-8-jdk
   register: DEPENDENCIA
 
 - name: 'adicionando repositorio'
