@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck)
 ---
-# IaC: with [Ansible](https://www.ansible.com) role to install and configure [NTP Server](www.ntp.org/)
+# IaC: with [Ansible](https://www.ansible.com) role to install and configure [Rundeck](http://rundeck.org/)
 ------------
 
 Description
