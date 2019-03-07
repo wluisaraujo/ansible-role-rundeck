@@ -1,29 +1,28 @@
 [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck)
 ---
+# IaC: with [Ansible](https://www.ansible.com) role to install and configure [NTP Server](www.ntp.org/)
+------------
 
-IaC: with [Ansible](https://www.ansible) role to install and configure for [Rundeck](http://rundeck.org/)
-================
+Description
+------------
 
-Stands up Rundeck on RHEL/CentOS
-
+ * Stands up Rundeck on RHEL/CentOS
+ 
 Requirements
 ------------
 
- Java
- Rundeck Repo
-
+ * Java
+ * Rundeck Repo
 
 Role Variables
 --------------
 
 [defaults/main.yml](defaults/main.yml)
 
-None
-
 Dependencies
 ------------
 
-None
+* None
 
 Example Playbook
 ----------------
