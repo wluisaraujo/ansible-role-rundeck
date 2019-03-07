@@ -2,7 +2,6 @@
 ---
 # iac-ansible-rundeck
 IaC: with [Ansible](https://www.ansible) role to install and configure for [Rundeck](http://rundeck.org/)
-
 ================
 
 Stands up Rundeck on RHEL/CentOS
