@@ -1,7 +1,6 @@
 ---
 ##
 ## tasks file for iac-ansible-rundeck
-
 - name: Instalando Dependencias
   yum: 
     name: java 

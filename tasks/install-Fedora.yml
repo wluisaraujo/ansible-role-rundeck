@@ -1,0 +1,28 @@
+---
+##
+## tasks file for iac-ansible-rundeck
+- name: Instalando Dependencias
+  dnf: 
+    name: "{{ item }}"
+    state: present
+  loop:
+    - java-1.8.0
+    - libpam4j
+  register: depresult
+  when: ( ansible_distribution == "Fedora" )
+
+- name: Configurando Repositorio
+  dnf:
+    name: http://repo.rundeck.org/latest.rpm 
+    state: present
+  when: ( depresult is success )
+  register: reporesult
+
+- name: Instalando Rundeck
+  dnf: 
+    name: rundeck 
+    state: latest
+  when: ( reporesult is success )
+  notify: 
+    - Start rundeckd
+...

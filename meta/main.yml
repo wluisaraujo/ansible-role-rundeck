@@ -1,16 +1,36 @@
+---
 galaxy_info:
   author: w.luis.araujo
   description: "Install Rundeck"
   company: Personal
   license: "(GPLv3)"
-  min_ansible_version: 1.5
+  min_ansible_version: 2.0
   platforms:
+  - name: Fedora
+    versions:
+    - 29
   - name: EL
     versions:
     - all
   - name: Debian
     versions:
     - all
+  - name: Ubuntu
+    versions:
+    - all
+  #  - lucid
+  #  - maverick
+  #  - natty
+  #  - oneiric
+  #  - precise
+  #  - quantal
+  #  - raring
+  #  - saucy
+  #  - trusty
+  #  - utopic
+  #  - vivid
+  #  - wily  
   galaxy_tags: 
     - rundeck
 dependencies: []
+...

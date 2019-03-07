@@ -1,14 +1,45 @@
 ---
 # handlers file for iac-ansible-rundeck
-- name: Start rundeckd
-  when: (ansible_os_family == "RedHat")
-  service: name=rundeckd state=started 
+- name: Start Rundeck
+  service: 
+    name: rundeckd 
+    state: started
+  when: 
+    - ansible_service_mgr == "service"
                 
-- name: Stop rundeckd
-  when: (ansible_os_family == "RedHat")
-  service: name=rundeckd state=stoped
+- name: Stop Rundeck
+  service: 
+    name: rundeckd
+    state: stopped
+  when: 
+    - ansible_service_mgr == "service"
                 
-- name: Restart rundeckd
-  when: (ansible_os_family == "RedHat")
-  service: name=rundeckd.service state=restarted  
+- name: Restart Rundeck
+  service: 
+    name: rundeckd.service 
+    state: restarted
+  when: 
+    - ansible_service_mgr == "service"
+
+- name: Start Rundeck
+  systemd:
+    state: started
+    name:  rundeckd.service 
+    enabled: yes
+  when: 
+    - ansible_service_mgr == "systemd"
+
+- name: Stop Rundeck
+  systemd:
+    state: stopped
+    name:  rundeckd.service 
+  when: 
+    - ansible_service_mgr == "systemd"
+
+- name: Restart Rundeck
+  systemd:
+    state: restarted
+    name:  rundeckd.service 
+  when: 
+    - ansible_service_mgr == "systemd"
 ...

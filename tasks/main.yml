@@ -1,10 +1,8 @@
 ---
 # tasks file for iac-ansible-rundeck
-- name:  Instala o Rundeck (OS Base Debian)
-  import_tasks: base-debian.yml
-  when: (ansible_os_family == "Debian")
+- name:  Instalando o Rundeck on para "{{ ansible_distribution }}""
+  include_tasks: install-{{ ansible_distribution }}.yml
 
-- name:  Instala o Rundeck (OS Base RedHat)
-  import_tasks: base-redhat.yml
-  when: (ansible_os_family == "RedHat")
+- name: Aplicando configuracoes para "{{ ansible_distribution }}"
+  include_tasks: configure.yml
 ...
