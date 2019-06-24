@@ -1,5 +1,8 @@
 ---
 galaxy_info:
+  
+  role_name: iac-ansible-rundeck
+  
   author: w.luis.araujo
   description: "Install and Configure Rundeck"
 
