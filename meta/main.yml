@@ -4,7 +4,7 @@ galaxy_info:
   role_name: rundeck
   
   author: w.luis.araujo
-  description: "Install and Configure Rundeck"
+  description: "Infrastructure as Code (IaC) with Ansible role for Install and Configure Rundeck"
 
   company: LUSAR
   license: "(GPLv3)"
