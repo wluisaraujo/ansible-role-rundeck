@@ -1,6 +1,6 @@
 ---
-# defaults file for iac-ansible-rundeck
-# defaults file for ansible-rundeck
+# defaults file for rundeck
+
 service_name: rundeckd
 config_rundeck: true
 enable_rundeck: true

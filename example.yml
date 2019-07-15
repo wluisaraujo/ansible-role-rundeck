@@ -1,9 +1,9 @@
 ---
-# Exemplo playbook para executar  a role iac-ansible-rundeck
+# Exemplo playbook para executar  a role rundeck
 # 07/Marco/2019 
 - hosts: localhost
   ansible_connection: local
   remote_user: root
   roles:
-    - iac-ansible-rundeck
+    - rundeck
 ...    

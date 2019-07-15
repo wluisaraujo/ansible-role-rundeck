@@ -1,5 +1,5 @@
-[![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-Rundeck-blue.svg)](https://galaxy.ansible.com/wluisaraujo/iac-ansible-rundeck)  [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-rundeck)
----
+[![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-Rundeck-blue.svg)](https://galaxy.ansible.com/wluisaraujo/iac-ansible-rundeck) [![Build Status](https://travis-ci.org/wluisaraujo/ansible-role-rundeck.svg?branch=master)](https://travis-ci.org/wluisaraujo/ansible-role-rundeck)
+
 # IaC: with [Ansible](https://www.ansible.com) role to install and configure [Rundeck](http://rundeck.org/)
 ------------
 
@@ -32,7 +32,7 @@ Example Playbook
   vars:
     - name: value
   roles:
-    - iac-ansible-rundeck
+    - rundeck
 ```
 
 ----------------

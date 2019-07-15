@@ -1,5 +1,5 @@
 ---
-# handlers file for iac-ansible-rundeck
+# handlers file for rundeck
 ## SystemD
 - name: Start {{ service_name }}
   systemd:

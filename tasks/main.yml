@@ -1,5 +1,5 @@
 ---
-# tasks file for iac-ansible-rundeck
+# tasks file for rundeck
 - name:  Instalando o Rundeck on para "{{ ansible_distribution }}""
   include_tasks: install-{{ ansible_distribution }}.yml
 
