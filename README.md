@@ -14,6 +14,14 @@ Requirements
  * Java
  * Rundeck Repo
 
+Installation
+------------
+
+```console
+vagrant@localhost:~$ ansible-galaxy install wluisaraujo.rundeck
+vagrant@localhost:~$ ansible-galaxy install -r wluisaraujo.rundeck/requirements.txt
+```
+
 Role Variables
 --------------
 
