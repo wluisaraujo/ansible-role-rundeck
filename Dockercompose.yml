@@ -1,27 +1,23 @@
 ---
+##
+##
 version: '3.7'
 services:
   rundeck:
-    image: rundeck/rundeck
+    image: rundeck/rundeck:3.1.2-20190927
     container_name: rundeck
-    dns_search: rundeck.dexter.com.br
+    hostname: rundeck.exemplo.com.br
+    domainname: exemplo.com.br
+    dns_search: exemplo.com.br
     restart: always
-    network_mode: "host"
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.10
-    dns:
-      - 127.0.0.1
-      - 8.8.8.8
+    environment:
+      HOSTNAME: rundeck.exemplo.com.br
+      RUNDECK_GRAILS_URL: http://127.0.0.1:4440
+    volumes:
+      - ~/.ssh:/home/rundeck/.ssh
+      - /tmp/data:/home/rundeck/server/data
     ports:
-      - "4440/tcp:4440/tcp"
+      - "4440:4440"
     expose:
       - "4440/tcp"
-    extra_hosts:
-      - "balancer.dexter.com.br:172.16.238.1"  
-      - "intranet.dexter.com.br:172.16.238.2"  
-      - "ldap.dexter.com.br:172.16.238.3"  
-      - "ns1.dexter.com.br:172.16.238.4"  
-      - "proxy.dexter.com.br:172.16.238.5"
-      - "rundeck.dexter.com.br:172.16.238.10"
 ...
