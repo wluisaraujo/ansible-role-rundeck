@@ -43,5 +43,15 @@ Example Playbook
     - rundeck
 ```
 
+Example of running container (with docker-compose)
+------------
+
+```console
+vagrant@localhost:~$ docker-compose --file docker-compose.yml config
+vagrant@localhost:~$ docker-compose -f docker-compose.yml create
+vagrant@localhost:~$ docker-compose -f docker-compose.yml start
+vagrant@localhost:~$ docker-compose --file docker-compose.yml events
+```
+
 ----------------
 [![Licence](https://img.shields.io/badge/License-GPL%20v3-red.svg)](https://www.gnu.org/licenses/gpl-3.0.pt-br.html)
