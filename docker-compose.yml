@@ -1,7 +1,5 @@
 ---
-##
-##
-version: '3.7'
+version: '3'
 services:
   rundeck:
     image: rundeck/rundeck:3.1.2-20190927
@@ -10,9 +8,6 @@ services:
     domainname: exemplo.com.br
     dns_search: exemplo.com.br
     restart: always
-    environment:
-      HOSTNAME: rundeck.exemplo.com.br
-      RUNDECK_GRAILS_URL: http://127.0.0.1:4440
     volumes:
       - ~/.ssh:/home/rundeck/.ssh
       - data:/home/rundeck/server/data
@@ -20,4 +15,9 @@ services:
       - "4440:4440"
     expose:
       - "4440/tcp"
+    environment:
+      HOSTNAME: rundeck.exemplo.com.br
+      RUNDECK_GRAILS_URL: http://127.0.0.1:4440
+volumes:
+    data:
 ...
