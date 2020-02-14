@@ -11,7 +11,8 @@ services:
     hostname: rundeck.exemplo.com.br
     domainname: exemplo.com.br
     dns_search: exemplo.com.br
-
+    
+    privileged: true
     restart: always
 
     environment:

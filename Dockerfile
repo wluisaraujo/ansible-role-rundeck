@@ -1,13 +1,13 @@
 # vim:set ft=dockerfile:
 
-FROM centos:latest
+FROM debian:latest
 
 MAINTAINER wluisaraujo
 LABEL maintainer="wluisaraujo"
 
-RUN yum makecache 
-RUN yum -y install java-1.8.0
-RUN curl -k -o /tmp/latest.rpm https://repo.rundeck.org/latest.rpm && rpm -Uvh /tmp/latest.rpm
-RUN yum -y install rundeck && systemctl enable --now rundeck.service
+RUN apt update 
+RUN apt-get install openjdk-8-jdk-headless
+RUN curl -k -o /tmp/rundeck_all.deb https://dl.bintray.com/rundeck/rundeck-deb/rundeck_3.2.2.20200204-1_all.deb
+RUN dpkg -i /tmp/rundeck_all.deb 
 
 EXPOSE 4440/tcp
