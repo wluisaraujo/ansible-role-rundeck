@@ -2,22 +2,19 @@
 version: '3'
 services:
   rundeck:
-    image: rundeck/rundeck:3.1.2-20190927
+    build: .
+
+    ports:
+      - "4440:4440"
+
     container_name: rundeck
     hostname: rundeck.exemplo.com.br
     domainname: exemplo.com.br
     dns_search: exemplo.com.br
+
     restart: always
-    volumes:
-      - ~/.ssh:/home/rundeck/.ssh
-      - data:/home/rundeck/server/data
-    ports:
-      - "4440:4440"
-    expose:
-      - "4440/tcp"
+
     environment:
       HOSTNAME: rundeck.exemplo.com.br
       RUNDECK_GRAILS_URL: http://127.0.0.1:4440
-volumes:
-    data:
 ...
