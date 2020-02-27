@@ -1,0 +1,13 @@
+# vim:set ft=dockerfile:
+
+FROM debian:latest
+
+MAINTAINER wluisaraujo
+LABEL maintainer="wluisaraujo"
+
+RUN apt update 
+RUN apt-get install -y openjdk-11-jdk-headless vim curl openssh-server uuid-runtime
+RUN curl -k -o /tmp/rundeck_all.deb https://dl.bintray.com/rundeck/rundeck-deb/rundeck_3.2.3.20200221-1_all.deb
+RUN dpkg -i /tmp/rundeck_all.deb 
+
+EXPOSE 4440/tcp
