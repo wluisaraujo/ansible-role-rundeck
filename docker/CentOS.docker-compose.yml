@@ -2,23 +2,26 @@
 version: '3'
 services:
   rundeck:
-    build: .
+    build:
+      context: ./
+      dockerfile: CentOS.Dockerfile
 
-    ports:
-      - "4440:4440"
-
+    tty: true
+    privileged: true
+    restart: always
+    entrypoint: /sbin/init
+    
     container_name: rundeck
     hostname: rundeck.exemplo.com.br
     domainname: exemplo.com.br
     dns_search: exemplo.com.br
-    
-    privileged: true
-    restart: always
 
-    volumes:
-      - ./files/etc:/etc/rundeck
-
+    ports:
+      - "4440:4440"
+#    volumes:
+#      - ../files/etc:/etc/rundeck
     environment:
       HOSTNAME: rundeck.exemplo.com.br
       RUNDECK_GRAILS_URL: http://127.0.0.1:4440
+
 ...

@@ -1,0 +1,22 @@
+---
+version: '3'
+services:
+  rundeck:
+    image: debian:latest
+    tty: true
+    privileged: true
+    restart: always
+    container_name: rundeck
+    hostname: rundeck.exemplo.com.br
+    domainname: exemplo.com.br
+    dns_search: exemplo.com.br
+    ports:
+      - "4440:4440"
+    network_mode: host
+#    volumes:
+#      - ./files/etc:/etc/rundeck
+#      - /run:/run
+    environment:
+      HOSTNAME: rundeck.exemplo.com.br
+      RUNDECK_GRAILS_URL: http://127.0.0.1:4440
+...
